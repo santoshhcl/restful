@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hi santosh Restful example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+function methodcall(){
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:8080/RESTfulExample/rest/hello/santosh",
+		success: function(data, status){
+		  	alert(data);
+			console.log("Its success"+data);
+		  	$("#showdata").html(data);
+		},
+		error: function(xhRequest, ErrorText, thrownErro){
+		  	//console.log("Its error"+ErrorText);
+		}
+	});
+	
+	
+}
+</script>
+</head>
+<body>
+<input type="button" id="santosh" onclick="methodcall()" value="call restful method"/>
+<div id="showdata"></div>
+ </body>
+</html>
